@@ -1,0 +1,48 @@
+<!-- .row>.col-md-4+.col-md-8 -->
+<div class="row">
+    <div class="col-md-4">
+        <!-- picture here -->
+        <img [src]="contact.picture" 
+            [title]="contact | fullname"
+            [alt]="contact | fullname" class="img-thumbnail">
+    </div>
+    <div class="col-md-8">
+        <!-- rest of the data here -->
+        <!-- table.table>tbody>tr*6>td*2 -->
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>{{ contact | fullname }}</td>
+                </tr>
+                <tr>
+                    <td>Email id</td>
+                    <td>{{ contact.email }}</td>
+                </tr>
+                <tr>
+                    <td>Phone number</td>
+                    <td>{{ contact.phone }}</td>
+                </tr>
+                <tr>
+                    <td>Date of birth</td>
+                    <td>{{ contact.birthDate }}</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>{{ contact.address }}</td>
+                </tr>
+                <tr>
+                    <td>City/state/country</td>
+                    <td>{{ contact.city }}
+                        {{ contact.state }}
+                        {{ contact.country }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary">Edit</button>
+        <button class="btn btn-danger" (click)="confirmAndDelete()">Delete</button>
+
+    </div>
+</div>
