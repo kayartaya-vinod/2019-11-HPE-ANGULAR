@@ -1,6 +1,7 @@
 import { OnInit, Component, NgModule } from "@angular/core";
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { WelcomeComponent } from './welcome.component';
 
 console.log('This is from ex01.ts');
 
@@ -11,6 +12,7 @@ console.log('This is from ex01.ts');
     template: `
     <h1>Angular demo</h1>
     <hr />
+    <div class="welcome"></div>
     <p>{{ message }}</p>
     `
 })
@@ -36,7 +38,7 @@ class HelloWorldComponent implements OnInit {
 @NgModule({
     declarations: [
         // a list of all components, pipes, directives that belong to this module
-        HelloWorldComponent
+        HelloWorldComponent, WelcomeComponent
     ],
     providers: [
         // a list of injectables (services)
@@ -47,7 +49,7 @@ class HelloWorldComponent implements OnInit {
     ],
     bootstrap: [
         // a list of components of this module that needs to be bootstraped
-        HelloWorldComponent
+        HelloWorldComponent,  
     ]
 })
 class AppModule { }
