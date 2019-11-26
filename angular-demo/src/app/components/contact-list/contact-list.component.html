@@ -1,6 +1,8 @@
-<h3>List of all contacts</h3>
+<h3>List of all contacts ({{ contacts.length }})</h3>
 <div class="list-group">
-    <app-contact-card class="list-group-item" 
-        *ngFor="let c of (contacts | async)" [contact]="c">
+    <app-contact-card 
+        (deleted)="handleDeleteContact($event)"
+        class="list-group-item" 
+        *ngFor="let c of contacts" [contact]="c">
     </app-contact-card>
 </div>

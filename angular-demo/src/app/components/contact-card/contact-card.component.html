@@ -3,11 +3,19 @@
         <img [src]="contact.picture" 
             [alt]="contact|fullname" 
             [title]="contact|fullname"
-            style="border-radius: 50%; height: 75px;"
+            style="border-radius: 50%; height: 100px;"
             class="img-thumbnail">
     </div>
     <div class="col-md-8">
         <h5>{{ contact | fullname }}</h5>
         <p>{{ contact.phone }} &middot; {{ contact.email }}</p>
+        <div>
+            <button class="btn btn-primary">
+                <i class="far fa-edit"></i>
+            </button>
+            <button class="btn btn-danger" (click)="confirmAndDelete()">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
     </div>
 </div>

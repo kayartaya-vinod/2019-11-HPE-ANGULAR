@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Route } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
@@ -12,6 +13,28 @@ import { FullnamePipe } from './pipes/fullname.pipe';
 import { AgePipe } from './pipes/age.pipe';
 import { ContactCardComponent } from './components/contact-card/contact-card.component';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
+const routes: Array<Route> = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'contact-list',
+    component: ContactListComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
+];
+
 
 @NgModule({
   declarations: [
@@ -24,11 +47,12 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
     FullnamePipe,
     AgePipe,
     ContactCardComponent,
-    ContactListComponent
+    ContactListComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   schemas: [

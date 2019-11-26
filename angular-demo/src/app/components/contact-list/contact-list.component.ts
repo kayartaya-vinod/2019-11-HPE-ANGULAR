@@ -10,12 +10,20 @@ import { Contact } from 'src/app/model/contact';
 })
 export class ContactListComponent implements OnInit {
 
-  contacts: Observable<Contact[]>;
+  // contacts: Observable<Contact[]>;
+  contacts: Contact[] = [];
 
   constructor(private service: ContactService) { }
 
   ngOnInit() {
-    this.contacts = this.service.getAllContacts();
+    //this.contacts = this.service.getAllContacts();
+    this.service.getAllContacts()
+      .subscribe(data => this.contacts = data);
+  }
+
+  handleDeleteContact(id: number) {
+    const index = this.contacts.findIndex(c => c.id === id);
+    this.contacts.splice(index, 1);
   }
 
 }
