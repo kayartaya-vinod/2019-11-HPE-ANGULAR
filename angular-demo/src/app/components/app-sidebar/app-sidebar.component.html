@@ -1,4 +1,11 @@
-<button class="btn btn-primary btn-block">Home</button>
-<button class="btn btn-primary btn-block">View all</button>
-<button class="btn btn-primary btn-block">Add new contact</button>
-<button class="btn btn-primary btn-block">Search contact</button>
+<button class="btn btn-primary btn-block"
+    [routerLink]="['/home']" >Home</button>
+
+<button class="btn btn-primary btn-block" 
+    [routerLink]="['/contact-list']">View all</button>
+
+<button class="btn btn-primary btn-block"
+    [routerLink]="['/add-new-contact']">Add new contact</button>
+
+<button class="btn btn-primary btn-block"
+    [routerLink]="['/search-contact']">Search contact</button>

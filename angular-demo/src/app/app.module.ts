@@ -19,6 +19,7 @@ const routes: Array<Route> = [
   {
     path: '',
     pathMatch: 'full',
+    // component: HomeComponent
     redirectTo: 'home'
   },
   {
@@ -53,6 +54,7 @@ const routes: Array<Route> = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [],
   schemas: [
