@@ -1,0 +1,23 @@
+{
+  "name": "rest-endpoint",
+  "version": "1.0.0",
+  "description": "A mock REST endpoint for our Angular application",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch --port=3000 ./db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kayartaya-vinod"
+  },
+  "keywords": [
+    "rest",
+    "json-server"
+  ],
+  "author": "Vinod <vinod@vinod.co>",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.15.1"
+  }
+}

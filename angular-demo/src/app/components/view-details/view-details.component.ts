@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/model/contact';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-view-details',
@@ -10,16 +11,14 @@ export class ViewDetailsComponent implements OnInit {
 
   contact: Contact;
 
-  constructor() { }
+  // keyword 'private' to a parameter, makes it as a member variable
+  // or 'public' or 'protected'
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    // temporary fix; later we shall recieve this from another component
-    this.contact = new Contact();
-    this.contact.id = 1;
-    this.contact.firstname = 'Vinod';
-    this.contact.lastname = 'Kumar';
-    this.contact.phone = '9731424784';
-    this.contact.email = 'vinod@vinod.co';
+    // temporary fix; code needs to be moved to a service layer
+    const url = 'http://localhost:3000/contacts/22';
+    this.http.get(url);
   }
 
   confirmAndDelete(): void {

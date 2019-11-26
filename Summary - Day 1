@@ -1,0 +1,23 @@
+install node.js
+>> npm --> node package manager
+
+install angular-cli
+
+npm install -g @angular/cli
+
+--> isntall a tool called "ng"
+
+ng --version
+
+ng new angular-demo
+>> creates a boilerplate demo application with all the config files
+1. angular.json
+    --> index = "src/index.html"
+    --> main = "src/main.ts"
+
+ng serve -o
+--> starts a dev server at port 4200
+--> watches for changes in src folder
+--> on change detection, transpile all ts files into js files
+--> refreshes the browser automatically
+
