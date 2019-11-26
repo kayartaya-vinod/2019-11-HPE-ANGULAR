@@ -1,0 +1,27 @@
+HttpClientModule
+    --> service -> HttpClient
+    --> provides functions for each HTTP methods like get/post/..
+    --> each of these methods return Observable
+    --> must be subscribed 
+
+ng g s services/contact-service
+    --> class ContactService / Injectable
+    --> depends on HttpClient
+
+json-server
+    --> db.json
+        {
+            "endpoing-name" : [
+                {}, {}, {}
+            ]
+        }
+    json-sever --port=3000 --watch db.json
+
+@Input
+--> child component gets data from parent component
+
+<app-contact-card *ngFor="let c of contacts" [contact]="c"
+
+@Output
+--> child component emits an event listened by parent
+<app-contact-card (deleted)="handleEvent($event)">...

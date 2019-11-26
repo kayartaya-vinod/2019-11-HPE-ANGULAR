@@ -14,6 +14,7 @@ import { AgePipe } from './pipes/age.pipe';
 import { ContactCardComponent } from './components/contact-card/contact-card.component';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ContactService } from './services/contact.service';
 
 const routes: Array<Route> = [
   {
@@ -56,7 +57,7 @@ const routes: Array<Route> = [
     HttpClientModule,
     RouterModule.forRoot(routes, { useHash: true })
   ],
-  providers: [],
+  providers: [ ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
