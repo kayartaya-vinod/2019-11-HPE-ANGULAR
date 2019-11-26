@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/model/contact';
-import { HttpClient } from '@angular/common/http';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
   selector: 'app-view-details',
@@ -9,16 +9,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ViewDetailsComponent implements OnInit {
 
-  contact: Contact;
+  contact: Contact = new Contact();
 
   // keyword 'private' to a parameter, makes it as a member variable
   // or 'public' or 'protected'
-  constructor(private http: HttpClient) { }
+  constructor(private service: ContactService) { }
 
   ngOnInit() {
-    // temporary fix; code needs to be moved to a service layer
-    const url = 'http://localhost:3000/contacts/22';
-    this.http.get(url);
+    // temporary fix; this should fetch data dynamically based
+    // on user's choice
+    this.service.getContactById(13)
+      .subscribe(data => this.contact = data);
   }
 
   confirmAndDelete(): void {

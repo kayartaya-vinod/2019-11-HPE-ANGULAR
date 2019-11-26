@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-3">
+        <img [src]="contact.picture" 
+            [alt]="contact|fullname" 
+            [title]="contact|fullname"
+            style="border-radius: 50%; height: 75px;"
+            class="img-thumbnail">
+    </div>
+    <div class="col-md-8">
+        <h5>{{ contact | fullname }}</h5>
+        <p>{{ contact.phone }} &middot; {{ contact.email }}</p>
+    </div>
+</div>

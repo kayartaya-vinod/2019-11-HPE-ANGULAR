@@ -1,0 +1,6 @@
+<h3>List of all contacts</h3>
+<div class="list-group">
+    <app-contact-card class="list-group-item" 
+        *ngFor="let c of (contacts | async)" [contact]="c">
+    </app-contact-card>
+</div>

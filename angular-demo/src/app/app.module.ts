@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { AgePipe } from './pipes/age.pipe';
+import { ContactCardComponent } from './components/contact-card/contact-card.component';
+import { ContactListComponent } from './components/contact-list/contact-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AgePipe } from './pipes/age.pipe';
     HomeComponent,
     ViewDetailsComponent,
     FullnamePipe,
-    AgePipe
+    AgePipe,
+    ContactCardComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,
