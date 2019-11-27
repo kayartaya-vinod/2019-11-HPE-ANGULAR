@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/model/contact';
 import { ContactService } from 'src/app/services/contact.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+// import swal from 'sweetalert';
 
 @Component({
   selector: 'app-view-details',
@@ -15,12 +16,13 @@ export class ViewDetailsComponent implements OnInit {
   // keyword 'private' to a parameter, makes it as a member variable
   // or 'public' or 'protected'
   constructor(private service: ContactService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(p => {
 
-      if(this.service['contact']) {
+      if (this.service['contact']) {
         // console.log('found contact in cache');
         this.contact = this.service['contact'];
         // empty the cache
@@ -43,13 +45,34 @@ export class ViewDetailsComponent implements OnInit {
   }
 
   confirmAndDelete(): void {
-    let choice = window.confirm('Are you sure you want to delete this?');
-    if (choice) {
-      // delete
-    }
-    else {
-      // don't do anything
-    }
+
+    let config = {
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    };
+
+    // swal({
+    //   title: "Are you sure?",
+    //   text: "Once deleted, you will not be able to recover this imaginary file!",
+    //   icon: "warning",
+    //   buttons: true,
+    //   dangerMode: true,
+    // })
+    // .then((willDelete) => {
+    //   if (willDelete) {
+    //     this.service.deleteContact(this.contact.id)
+    //       .subscribe(()=>{
+    //         this.router.navigate(['/contact-list']);
+    //         window['toastr'].success('Contact deleted!');
+    //       });
+    //   }
+    // });
+
   }
 
 }

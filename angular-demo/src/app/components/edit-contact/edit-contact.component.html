@@ -1,10 +1,11 @@
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <!-- picture here -->
         <img [src]="contact.picture" [title]="contact | fullname" [alt]="contact | fullname" class="img-thumbnail">
     </div>
     <div class="col-md-8">
-        <form>
+        <form #f1="ngForm">
+            <!-- {{ f1 | json }} -->
 
             <div class="row form-group">
                 <label for="" class="col-md-3 col-form-label"></label>
@@ -19,7 +20,16 @@
             <div class="row form-group">
                 <label for="" class="col-md-3 col-form-label">Firstname</label>
                 <div class="col-md-9">
-                    <input class="form-control" type="text" name="firstname" [(ngModel)]="contact.firstname">
+                    <input class="form-control" type="text" 
+                        required
+                        minlength="3"
+                        #fname="ngModel"
+                        name="firstname" [(ngModel)]="contact.firstname">
+
+                    <div class="text-danger" *ngIf="fname.dirty && fname.invalid">
+                        <div *ngIf="fname.errors.required">Firtname is mandatory</div>
+                        <div *ngIf="fname.errors.minlength">Minimum 3 letters required</div>
+                    </div>
                 </div>
             </div>
 
@@ -33,14 +43,31 @@
             <div class="row form-group">
                 <label for="" class="col-md-3 col-form-label">Email</label>
                 <div class="col-md-9">
-                    <input class="form-control" type="text" name="email" [(ngModel)]="contact.email">
+                    <input class="form-control" 
+                        #email="ngModel"
+                        required
+                        pattern="(.+)@(.+){2,}\.(.+){2,}"
+                        type="email" name="email" [(ngModel)]="contact.email">
+
+                    <div class="text-danger" *ngIf="email.dirty && email.invalid">
+                        <div *ngIf="email.errors.required">Email is mandatory</div>
+                        <div *ngIf="email.errors.pattern">Invalid email pattern. Did you forget @ or . ?</div>
+                    </div>
                 </div>
             </div>
 
             <div class="row form-group">
                 <label for="" class="col-md-3 col-form-label">Phone</label>
                 <div class="col-md-9">
-                    <input class="form-control" type="text" name="phone" [(ngModel)]="contact.phone">
+                    <input class="form-control" 
+                        #phone="ngModel"
+                        required
+                        pattern="^\d{10,12}$"
+                        type="tel" name="phone" [(ngModel)]="contact.phone">
+                    <div class="text-danger" *ngIf="phone.dirty && phone.invalid">
+                        <div *ngIf="phone.errors.required">Phone number is mandatory</div>
+                        <div *ngIf="phone.errors.pattern">Must be only digits (10 to 12)</div>
+                    </div>
                 </div>
             </div>
 
@@ -89,7 +116,13 @@
             <div class="row form-group">
                 <label for="" class="col-md-3 col-form-label"></label>
                 <div class="col-md-9">
-                    <button class="btn btn-primary" (click)="saveChanges()">Save changes</button>
+                    <button class="btn" 
+                        [ngClass]="{ 'btn-primary': f1.valid, 'btn-danger': f1.invalid }"
+                        [disabled] = "f1.invalid"
+                        (click)="saveChanges()">Save changes</button>
+                    
+                    
+                    
                     <button class="btn btn-link" [routerLink]="['/view-details', contact.id]">Cancel</button>
                 </div>
             </div>

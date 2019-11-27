@@ -1,3 +1,14 @@
 .app-radio-label {
     padding-right: 10px;
 }
+
+input.form-control.ng-valid {
+    border-left: 7px solid green;
+}
+input.form-control.ng-invalid {
+    border-left: 7px solid red;
+}
+
+.text-danger {
+    font-size: .8em;
+}

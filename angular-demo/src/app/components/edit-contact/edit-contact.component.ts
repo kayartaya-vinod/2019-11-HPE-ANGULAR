@@ -33,9 +33,10 @@ export class EditContactComponent implements OnInit {
     this.service.updateContact(this.contact)
       .subscribe(()=>{
         this.router.navigate(['/view-details', this.contact.id]);
-        window.alert('Update successful!');
+        // window.alert('Update successful!');
+        window['toastr'].success('Update successful!', 'Phonebook App v1.0');
       }, ()=>{
-        window.alert('There was a problem while saving changes!!')
+        window['toastr'].error('There was a problem while saving changes!!', 'Phonebook App v1.0');
       });
   }
 
