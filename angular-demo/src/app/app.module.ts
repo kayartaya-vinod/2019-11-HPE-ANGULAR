@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Route } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
@@ -15,6 +17,7 @@ import { ContactCardComponent } from './components/contact-card/contact-card.com
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ContactService } from './services/contact.service';
+import { EditContactComponent } from './components/edit-contact/edit-contact.component';
 
 const routes: Array<Route> = [
   {
@@ -30,6 +33,14 @@ const routes: Array<Route> = [
   {
     path: 'contact-list',
     component: ContactListComponent
+  },
+  {
+    path: 'view-details/:contactId',
+    component: ViewDetailsComponent
+  },
+  {
+    path: 'edit-contact/:contactId',
+    component: EditContactComponent
   },
   {
     path: '**',
@@ -50,11 +61,13 @@ const routes: Array<Route> = [
     AgePipe,
     ContactCardComponent,
     ContactListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EditContactComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [ ],

@@ -45,7 +45,9 @@
             </tbody>
         </table>
 
-        <button class="btn btn-primary">Edit</button>
+        <button class="btn btn-primary" 
+            (click)="cacheContact()"
+            [routerLink]="['/edit-contact', contact.id]">Edit</button>
         <button class="btn btn-danger" (click)="confirmAndDelete()">Delete</button>
 
     </div>

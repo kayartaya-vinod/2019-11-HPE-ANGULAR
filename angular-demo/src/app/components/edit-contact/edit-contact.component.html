@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-md-4">
+        <!-- picture here -->
+        <img [src]="contact.picture" [title]="contact | fullname" [alt]="contact | fullname" class="img-thumbnail">
+    </div>
+    <div class="col-md-8">
+        <form>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label"></label>
+                <div class="col-md-9">
+                    <label class="app-radio-label">
+                        <input type="radio" name="gender" [(ngModel)]="contact.gender" value="Male"> Mr.</label>
+                    <label class="app-radio-label">
+                        <input type="radio" name="gender" [(ngModel)]="contact.gender" value="Female"> Ms.</label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label">Firstname</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="firstname" [(ngModel)]="contact.firstname">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label">Lastname</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="lastname" [(ngModel)]="contact.lastname">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label">Email</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="email" [(ngModel)]="contact.email">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label">Phone</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="phone" [(ngModel)]="contact.phone">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label">Picture</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="picture" [(ngModel)]="contact.picture">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label">Date of birth</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="birthDate" [(ngModel)]="contact.birthDate">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label">Street address</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="address" [(ngModel)]="contact.address">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label">City</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="city" [(ngModel)]="contact.city">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label">State</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="state" [(ngModel)]="contact.state">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label">Country</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="country" [(ngModel)]="contact.country">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label for="" class="col-md-3 col-form-label"></label>
+                <div class="col-md-9">
+                    <button class="btn btn-primary" (click)="saveChanges()">Save changes</button>
+                    <button class="btn btn-link" [routerLink]="['/view-details', contact.id]">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

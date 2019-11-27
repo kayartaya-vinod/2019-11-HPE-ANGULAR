@@ -12,13 +12,20 @@ export class ContactListComponent implements OnInit {
 
   // contacts: Observable<Contact[]>;
   contacts: Contact[] = [];
+  networkError: boolean = false;
 
   constructor(private service: ContactService) { }
 
   ngOnInit() {
     //this.contacts = this.service.getAllContacts();
     this.service.getAllContacts()
-      .subscribe(data => this.contacts = data);
+      .subscribe(data => {
+        this.contacts = data;
+        this.networkError = false;
+      }, () => {
+        this.networkError = true;
+        setTimeout(() => this.ngOnInit(), 5000);
+      });
   }
 
   handleDeleteContact(id: number) {

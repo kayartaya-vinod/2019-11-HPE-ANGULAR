@@ -26,4 +26,11 @@ export class ContactCardComponent implements OnInit {
         .subscribe(() => this.deleted.emit(this.contact.id));
     }
   }
+
+  cacheContact() {
+    // cache the current contact instance in the service singleton object
+    this.service['contact'] = this.contact;
+    // window.sessionStorage['contact'] = this.contact;
+    // window.localStorage['contact'] = this.contact;
+  }
 }

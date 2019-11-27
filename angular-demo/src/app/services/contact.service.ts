@@ -30,4 +30,8 @@ export class ContactService {
   deleteContact(id: number): Observable<any> {
     return this.http.delete(baseUrl + id);
   }
+
+  updateContact(contact: Contact): Observable<any> {
+    return this.http.put(baseUrl + contact.id, contact);
+  }
 }

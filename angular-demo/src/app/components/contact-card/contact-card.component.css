@@ -1,0 +1,17 @@
+div.row  div.app-buttons {
+    visibility: hidden;
+}
+
+div.row:hover   div.app-buttons {
+    visibility: visible;
+}
+
+.btn {
+    opacity: .5;
+    /* box-shadow: none; */
+}
+
+.btn:hover {
+    opacity: 1;
+    /* box-shadow: 0 0 10px 5px yellow; */
+}
