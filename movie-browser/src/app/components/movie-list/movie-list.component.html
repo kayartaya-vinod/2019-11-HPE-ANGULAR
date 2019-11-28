@@ -1,13 +1,21 @@
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-5">
         <!-- movie list here -->
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let m of movieList">
-                {{ m.Title }}
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="img-thumbnail" [src]="m.Poster" [alt]="m.Title">
+                    </div>
+                    <div class="col-md-9">
+                        <h5>{{ m.Title }}</h5>
+                        <p>{{ m.Year }}</p>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-7">
         <app-movie-details></app-movie-details>
     </div>
 </div>

@@ -8,6 +8,8 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { ChuckNorrisJokeComponent } from './components/chuck-norris-joke/chuck-norris-joke.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { ChuckNorrisJokeComponent } from './components/chuck-norris-joke/chuck-n
   imports: [
     BrowserModule, 
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
