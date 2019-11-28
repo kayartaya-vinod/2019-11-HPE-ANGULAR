@@ -1,3 +1,10 @@
-<div class="alert alert-primary">
-    <h1>Angular Demo App</h1>
+<div class="alert alert-primary app-bar">
+    <div class="container row">
+        <div class="col">
+            <h1>Angular Demo App</h1>
+        </div>
+        <div class="col text-right">
+            <span *ngIf="count>0">Total {{ count }} contacts.</span>
+        </div>
+    </div>
 </div>

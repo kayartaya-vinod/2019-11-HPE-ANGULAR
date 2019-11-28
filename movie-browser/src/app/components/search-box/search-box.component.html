@@ -1,0 +1,9 @@
+<div>
+        <input type="text" class="form-control" 
+            [(ngModel)]="searchTerm" name="searchTerm" autofocus
+            placeholder="search by title... (press ENTER key to get result)">
+
+        <button class="btn btn-primary" (click)="searchMovies()">Get movies</button>
+</div>
+
+<app-movie-list [movieList]="movies"></app-movie-list>

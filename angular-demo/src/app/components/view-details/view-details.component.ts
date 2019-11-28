@@ -31,7 +31,13 @@ export class ViewDetailsComponent implements OnInit {
       else {
         // console.log('contact not found in cache; getting from REST endpoint.');
         this.service.getContactById(p.contactId)
-          .subscribe(data => this.contact = data);
+          .subscribe(
+            (data) => this.contact = data,
+            () => {
+              window['toastr'].error('No data found!');
+              this.router.navigate(['/'])
+            }
+          );
       }
 
     });
@@ -46,32 +52,14 @@ export class ViewDetailsComponent implements OnInit {
 
   confirmAndDelete(): void {
 
-    let config = {
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    };
-
-    // swal({
-    //   title: "Are you sure?",
-    //   text: "Once deleted, you will not be able to recover this imaginary file!",
-    //   icon: "warning",
-    //   buttons: true,
-    //   dangerMode: true,
-    // })
-    // .then((willDelete) => {
-    //   if (willDelete) {
-    //     this.service.deleteContact(this.contact.id)
-    //       .subscribe(()=>{
-    //         this.router.navigate(['/contact-list']);
-    //         window['toastr'].success('Contact deleted!');
-    //       });
-    //   }
-    // });
+    if (window.confirm('Are you sure?')) {
+      this.service.deleteContact(this.contact.id)
+        .subscribe(() => {
+          this.service.emit('contactdeleted');
+          this.router.navigate(['/']);
+          window['toastr'].info('Contact deleted');
+        });
+    }
 
   }
 

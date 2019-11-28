@@ -1,48 +1,6 @@
 {
   "contacts": [
     {
-      "id": 2,
-      "firstname": "Zaccaria",
-      "lastname": "McGregor",
-      "gender": "Male",
-      "email": "zmcgregor1@gov.uk",
-      "phone": "4024504769",
-      "picture": "http://kvinod.com/old_ci/randomdata/images/men/2.jpg",
-      "birthDate": "1979-12-22",
-      "address": "563 Valley Edge Way",
-      "city": "Omaha",
-      "state": "Nebraska",
-      "country": "United States"
-    },
-    {
-      "id": 3,
-      "firstname": "Elspeth",
-      "lastname": "Kaine",
-      "gender": "Female",
-      "email": "ekaine2@51.la",
-      "phone": "9523794162",
-      "picture": "http://kvinod.com/old_ci/randomdata/images/women/3.jpg",
-      "birthDate": "1974-05-30",
-      "address": "189 Kim Park",
-      "city": "Minneapolis",
-      "state": "Minnesota",
-      "country": "United States"
-    },
-    {
-      "id": 4,
-      "firstname": "Mohandas",
-      "lastname": "Allibone",
-      "gender": "Male",
-      "email": "mallibone3@alibaba.com",
-      "phone": "5042768821",
-      "picture": "http://kvinod.com/old_ci/randomdata/images/men/4.jpg",
-      "birthDate": "1982-08-19",
-      "address": "99 Manley Place",
-      "city": "New Orleans",
-      "state": "Louisiana",
-      "country": "United States"
-    },
-    {
       "id": 5,
       "firstname": "Augustina",
       "lastname": "Morcom",
@@ -1385,6 +1343,20 @@
       "city": "Saint Petersburg",
       "state": "Florida",
       "country": "United States"
+    },
+    {
+      "gender": "Male",
+      "picture": "https://vinod.co/assets/images/dp/5aeae89ff74086bbe2df2bafe145ed8f",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "country": "India",
+      "firstname": "Vinod",
+      "lastname": "Kumar",
+      "email": "vinod@vinod.co",
+      "phone": "9731424784",
+      "birthDate": "1974-01-20",
+      "address": "1st cross 1st main ISRO layout",
+      "id": 101
     }
   ]
 }

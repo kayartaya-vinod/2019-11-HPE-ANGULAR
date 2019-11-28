@@ -28,6 +28,8 @@ export class ContactCardComponent implements OnInit {
   }
 
   cacheContact() {
+    window['scrollTop'] = window['$'](window).scrollTop();
+    
     // cache the current contact instance in the service singleton object
     this.service['contact'] = this.contact;
     // window.sessionStorage['contact'] = this.contact;

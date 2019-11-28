@@ -24,7 +24,12 @@ export class EditContactComponent implements OnInit {
     else {
       this.activatedRoute.params.subscribe(p => {
         this.service.getContactById(p.contactId)
-          .subscribe(data => this.contact = data);
+          .subscribe(
+            data => this.contact = data,
+            ()=>{
+              window['toastr'].error('No data found!');
+              this.router.navigate(['/'])
+            });
       });
     }
   }
@@ -38,6 +43,15 @@ export class EditContactComponent implements OnInit {
       }, ()=>{
         window['toastr'].error('There was a problem while saving changes!!', 'Phonebook App v1.0');
       });
+  }
+
+  back() {
+    window.history.back();
+    window['$']([document.documentElement, document.body]).animate({
+      scrollTop: window['scrollTop']
+    }, function(){
+      window['scrollTop'] = 0;
+    });
   }
 
 }

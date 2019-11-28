@@ -20,7 +20,7 @@
             <div class="row form-group">
                 <label for="" class="col-md-3 col-form-label">Firstname</label>
                 <div class="col-md-9">
-                    <input class="form-control" type="text" 
+                    <input class="form-control" type="text" autofocus
                         required
                         minlength="3"
                         #fname="ngModel"
@@ -123,7 +123,8 @@
                     
                     
                     
-                    <button class="btn btn-link" [routerLink]="['/view-details', contact.id]">Cancel</button>
+                    <button class="btn btn-link" 
+                        (click)="back()">Cancel</button>
                 </div>
             </div>
         </form>

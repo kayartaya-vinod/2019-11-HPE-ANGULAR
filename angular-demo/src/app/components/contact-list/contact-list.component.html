@@ -5,9 +5,19 @@
 
 <div *ngIf="networkError===false">
     <h3>List of all contacts ({{ contacts.length }})</h3>
+    
+    <input type="search" class="form-control" 
+        autofocus placeholder="search..."
+        name="search" [(ngModel)]="searchText">
+
     <div class="list-group">
-        <app-contact-card (deleted)="handleDeleteContact($event)" class="list-group-item" *ngFor="let c of contacts"
+        <app-contact-card (deleted)="handleDeleteContact($event)" class="list-group-item" 
+            *ngFor="let c of contacts | filter: searchText"
             [contact]="c">
         </app-contact-card>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-warning" (click)="loadMore()">Load more...</button>
     </div>
 </div>

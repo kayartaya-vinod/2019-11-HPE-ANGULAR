@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-4">
+        <!-- movie list here -->
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let m of movieList">
+                {{ m.Title }}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <app-movie-details></app-movie-details>
+    </div>
+</div>

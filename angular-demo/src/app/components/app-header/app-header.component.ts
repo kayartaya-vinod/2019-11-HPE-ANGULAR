@@ -1,17 +1,18 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './app-header.component.html',
   styleUrls: ['./app-header.component.css']
 })
-export class AppHeaderComponent implements OnInit, OnDestroy {
+export class AppHeaderComponent {
 
-  constructor() { }
+  count: number = 0;
 
-  ngOnInit() {
-  }
-  ngOnDestroy(): void {
+  constructor(service: ContactService) {
+    service.on('contactsloaded', count => this.count = count);
+    service.on('contactdeleted', () => this.count--);
   }
 
 }

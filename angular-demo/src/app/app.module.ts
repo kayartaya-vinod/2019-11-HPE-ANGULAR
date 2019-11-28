@@ -18,6 +18,8 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ContactService } from './services/contact.service';
 import { EditContactComponent } from './components/edit-contact/edit-contact.component';
+import { AddContactComponent } from './components/add-contact/add-contact.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 const routes: Array<Route> = [
   {
@@ -43,6 +45,10 @@ const routes: Array<Route> = [
     component: EditContactComponent
   },
   {
+    path: 'add-new-contact',
+    component: AddContactComponent
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
@@ -62,7 +68,9 @@ const routes: Array<Route> = [
     ContactCardComponent,
     ContactListComponent,
     PageNotFoundComponent,
-    EditContactComponent
+    EditContactComponent,
+    AddContactComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
