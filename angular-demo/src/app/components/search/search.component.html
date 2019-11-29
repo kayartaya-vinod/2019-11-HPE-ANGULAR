@@ -1,0 +1,11 @@
+<h3>Search contacts</h3>
+<hr>
+
+<div>
+    <button [routerLink]="['/search/simple']" class="btn btn-secondary">Simple</button>
+    <button [routerLink]="['/search', 'advanced']" class="btn btn-secondary">Advanced</button>
+</div>
+
+<div [ngStyle]="{padding: '30px'}">
+    <router-outlet></router-outlet>
+</div>

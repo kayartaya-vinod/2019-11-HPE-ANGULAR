@@ -19,6 +19,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { FilterPipe } from './pipes/filter.pipe';
 import { ContactFormModule } from './contact-form.module';
 import { routes } from './route-config';
+import { SearchComponent } from './components/search/search.component';
+import { SimpleSearchComponent } from './components/search/simple-search/simple-search.component';
+import { AdvancedSearchComponent } from './components/search/advanced-search/advanced-search.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { routes } from './route-config';
     ContactCardComponent,
     ContactListComponent,
     PageNotFoundComponent,
-    FilterPipe
+    FilterPipe,
+    SearchComponent,
+    SimpleSearchComponent,
+    AdvancedSearchComponent
   ],
   imports: [
     ContactFormModule,
