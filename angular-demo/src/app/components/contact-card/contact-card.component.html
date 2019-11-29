@@ -18,7 +18,7 @@
         <div class="app-buttons">
             <button class="btn btn-primary"
                 (click)="cacheContact()"
-                [routerLink]="['/edit-contact', contact.id]">
+                [routerLink]="['/contact', 'edit', contact.id]">
                 <i class="far fa-edit"></i>
             </button>
             <button class="btn btn-danger" (click)="confirmAndDelete()">

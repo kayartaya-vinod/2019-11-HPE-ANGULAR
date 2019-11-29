@@ -4,8 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { EditContactComponent } from './components/edit-contact/edit-contact.component';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { FullnamePipe } from './pipes/fullname.pipe';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { Route } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+const routeConfig: Route[] = [
+    {
+        path: 'edit/:contactId',
+        component: EditContactComponent
+    },
+    {
+        path: 'add',
+        component: AddContactComponent
+    }
+];
 
 @NgModule({
     declarations: [
@@ -14,9 +26,9 @@ import { RouterModule } from '@angular/router';
         FullnamePipe
     ],
     imports: [
-        BrowserModule,
+        CommonModule,
         FormsModule,
-        RouterModule
+        RouterModule.forChild(routeConfig)
     ],
     exports: [
         EditContactComponent,
