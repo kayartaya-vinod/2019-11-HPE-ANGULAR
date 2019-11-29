@@ -18,6 +18,10 @@ export class AddContactComponent implements OnInit {
   ngOnInit() {
   }
 
+  back() {
+    
+  }
+
   saveChanges() {
     this.service.addContact(this.contact)
       .subscribe(c => {

@@ -1,0 +1,29 @@
+{
+    "header": {
+        "title": "Angular ಡೆಮೊ ಅಪ್ಲಿಕೇಶನ್",
+        "contactCount": "ಒಟ್ಟು ಸಂಪರ್ಕಗಳು:"
+    },
+    "sidebar": {
+        "btnHome": "ಮನೆ",
+        "btnViewAll": "View all contacts",
+        "btnAddNew": "Add new contact",
+        "btnSearch": "Search..."
+    },
+    "footer": {
+        "copy": "2019-20 ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕೆವಿನೋಡ್ ಇಂಕ್ ಕಾಯ್ದಿರಿಸಿದೆ"
+    },
+    "contactDetails": {
+        "name": "Name",
+        "email": "Email address",
+        "phone": "Phone number",
+        "dob": "Date of birth",
+        "age": "Age",
+        "address": "Street address",
+        "cityStateCountry": "City/State/Country",
+        "btnEdit": "Edit",
+        "btnDelete": "Delete"
+    },
+    "contactForm": {
+
+    }
+}

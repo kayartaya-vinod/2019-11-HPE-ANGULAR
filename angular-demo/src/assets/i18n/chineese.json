@@ -1,0 +1,29 @@
+{
+    "header": {
+        "title": "角度演示应用",
+        "contactCount": "总联络人："
+    },
+    "sidebar": {
+        "btnHome": "家",
+        "btnViewAll": "查看所有联系人",
+        "btnAddNew": "新增联络人",
+        "btnSearch": "Search..."
+    },
+    "footer": {
+        "copy": "2019-20 All rights reserved by KVinod Inc"
+    },
+    "contactDetails": {
+        "name": "Name",
+        "email": "Email address",
+        "phone": "Phone number",
+        "dob": "Date of birth",
+        "age": "Age",
+        "address": "Street address",
+        "cityStateCountry": "City/State/Country",
+        "btnEdit": "Edit",
+        "btnDelete": "Delete"
+    },
+    "contactForm": {
+
+    }
+}

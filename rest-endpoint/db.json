@@ -1,20 +1,6 @@
 {
   "contacts": [
     {
-      "id": 5,
-      "firstname": "Augustina",
-      "lastname": "Morcom",
-      "gender": "Female",
-      "email": "amorcom4@fastcompany.com",
-      "phone": "7177542481",
-      "picture": "http://kvinod.com/old_ci/randomdata/images/women/5.jpg",
-      "birthDate": "1989-10-19",
-      "address": "62 Norway Maple Alley",
-      "city": "Harrisburg",
-      "state": "Pennsylvania",
-      "country": "United States"
-    },
-    {
       "id": 6,
       "firstname": "Taryn",
       "lastname": "De Zuani",

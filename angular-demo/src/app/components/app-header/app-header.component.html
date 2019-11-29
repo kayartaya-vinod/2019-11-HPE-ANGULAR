@@ -1,10 +1,10 @@
 <div class="alert alert-primary app-bar">
-    <div class="container row">
+    <div class="row" [dir]="dir">
         <div class="col">
-            <h1>Angular Demo App</h1>
+            <h1>{{ 'header.title' | translate }}</h1>
         </div>
         <div class="col text-right">
-            <span *ngIf="count>0">Total {{ count }} contacts.</span>
+            <span *ngIf="count>0">{{ 'header.contactCount' | translate }}{{ count }}.</span>
         </div>
     </div>
 </div>

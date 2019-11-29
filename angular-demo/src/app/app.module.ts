@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterModule, Route } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
@@ -17,9 +18,10 @@ import { ContactCardComponent } from './components/contact-card/contact-card.com
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ContactService } from './services/contact.service';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ContactFormModule } from './contact-form.module';
 import { EditContactComponent } from './components/edit-contact/edit-contact.component';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
-import { FilterPipe } from './pipes/filter.pipe';
 
 const routes: Array<Route> = [
   {
@@ -54,7 +56,6 @@ const routes: Array<Route> = [
   }
 ];
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,22 +64,27 @@ const routes: Array<Route> = [
     AppSidebarComponent,
     HomeComponent,
     ViewDetailsComponent,
-    FullnamePipe,
     AgePipe,
     ContactCardComponent,
     ContactListComponent,
     PageNotFoundComponent,
-    EditContactComponent,
-    AddContactComponent,
     FilterPipe
   ],
   imports: [
+    ContactFormModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes, { useHash: true })
+    RouterModule.forRoot(routes, { useHash: true }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        deps: [HttpClient],
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http)
+      }
+    })
   ],
-  providers: [ ],
+  providers: [],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

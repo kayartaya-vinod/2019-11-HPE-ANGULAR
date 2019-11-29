@@ -1,0 +1,29 @@
+{
+    "header": {
+        "title": "Angular Demo Application",
+        "contactCount": "Total contacts: "
+    },
+    "sidebar": {
+        "btnHome": "Home",
+        "btnViewAll": "View all contacts",
+        "btnAddNew": "Add new contact",
+        "btnSearch": "Search..."
+    },
+    "footer": {
+        "copy": "2019-20 All rights reserved by KVinod Inc"
+    },
+    "contactDetails": {
+        "name": "Name",
+        "email": "Email address",
+        "phone": "Phone number",
+        "dob": "Date of birth",
+        "age": "Age",
+        "address": "Street address",
+        "cityStateCountry": "City/State/Country",
+        "btnEdit": "Edit",
+        "btnDelete": "Delete"
+    },
+    "contactForm": {
+
+    }
+}

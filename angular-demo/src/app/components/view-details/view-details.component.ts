@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ViewDetailsComponent implements OnInit {
 
   contact: Contact = new Contact();
+  dir: string = 'ltr';
 
   // keyword 'private' to a parameter, makes it as a member variable
   // or 'public' or 'protected'
@@ -20,6 +21,7 @@ export class ViewDetailsComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    this.service.on('dirchanged', dir => this.dir = dir);
     this.activatedRoute.params.subscribe(p => {
 
       if (this.service['contact']) {

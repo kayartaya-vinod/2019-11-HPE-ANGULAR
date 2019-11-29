@@ -10,6 +10,7 @@ import { Contact } from 'src/app/model/contact';
 })
 export class ContactListComponent implements OnInit {
 
+  searchText: string;
   // contacts: Observable<Contact[]>;
   contacts: Contact[] = [];
   networkError: boolean = false;

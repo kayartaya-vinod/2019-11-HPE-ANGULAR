@@ -1,5 +1,5 @@
 <!-- .row>.col-md-4+.col-md-8 -->
-<div class="row">
+<div class="row" [dir]="dir">
     <div class="col-md-3">
         <!-- picture here -->
         <img [src]="contact.picture" 
@@ -12,31 +12,31 @@
         <table class="table">
             <tbody>
                 <tr>
-                    <td>Name</td>
+                    <td>{{ 'contactDetails.name' | translate }}</td>
                     <td>{{ contact | fullname }}</td>
                 </tr>
                 <tr>
-                    <td>Email id</td>
+                    <td>{{ 'contactDetails.email' | translate }}</td>
                     <td>{{ contact.email }}</td>
                 </tr>
                 <tr>
-                    <td>Phone number</td>
+                    <td>{{ 'contactDetails.phone' | translate }}</td>
                     <td>{{ contact.phone }}</td>
                 </tr>
                 <tr>
-                    <td>Date of birth</td>
+                    <td>{{ 'contactDetails.dob' | translate }}</td>
                     <td>{{ contact.birthDate }}</td>
                 </tr>
                 <tr>
-                    <td>Age</td>
+                    <td>{{ 'contactDetails.age' | translate }}</td>
                     <td>{{ contact.birthDate | age : 2  }}</td>
                 </tr>
                 <tr>
-                    <td>Address</td>
+                    <td>{{ 'contactDetails.address' | translate }}</td>
                     <td>{{ contact.address }}</td>
                 </tr>
                 <tr>
-                    <td>City/state/country</td>
+                    <td>{{ 'contactDetails.cityStateCountry' | translate }}</td>
                     <td>{{ contact.city }}
                         {{ contact.state }}
                         {{ contact.country }}
@@ -47,8 +47,8 @@
 
         <button class="btn btn-primary" 
             (click)="cacheContact()"
-            [routerLink]="['/edit-contact', contact.id]">Edit</button>
-        <button class="btn btn-danger" (click)="confirmAndDelete()">Delete</button>
+            [routerLink]="['/edit-contact', contact.id]">{{ 'contactDetails.btnEdit' | translate }}</button>
+        <button class="btn btn-danger" (click)="confirmAndDelete()">{{ 'contactDetails.btnDelete' | translate }}</button>
 
     </div>
 </div>

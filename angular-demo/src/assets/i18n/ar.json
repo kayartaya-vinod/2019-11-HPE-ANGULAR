@@ -1,0 +1,29 @@
+{
+    "header": {
+        "title": "التطبيق التجريبي الزاوي",
+        "contactCount": "مجموع جهات الاتصال:"
+    },
+    "sidebar": {
+        "btnHome": "الصفحة الرئيسية",
+        "btnViewAll": "عرض جميع جهات الاتصال",
+        "btnAddNew": "إضافة جهة اتصال جديدة",
+        "btnSearch": "بحث..."
+    },
+    "footer": {
+        "copy": "2019-20 جميع الحقوق محفوظة لشركة KVinod Inc"
+    },
+    "contactDetails": {
+        "name": "اسم",
+        "email": "عنوان البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "dob": "تاريخ الولادة",
+        "age": "عمر",
+        "address": "عنوان الشارع",
+        "cityStateCountry": "مدينة ولاية دولة",
+        "btnEdit": "تصحيح",
+        "btnDelete": "حذف"
+    },
+    "contactForm": {
+
+    }
+}

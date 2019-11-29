@@ -1,1 +1,9 @@
-<p class="text-center">&copy; 2019-20 All rights reserved by KVinod Inc</p>
+<p class="text-center">&copy; {{ 'footer.copy' | translate }}</p>
+
+<div class="text-center">
+    <button (click)="changeLang('en')" class="btn btn-link">English</button>
+    | <button (click)="changeLang('kn')" class="btn btn-link">ಕನ್ನಡ</button>
+    | <button (click)="changeLang('chineese')" class="btn btn-link">中文</button>
+    | <button (click)="changeLang('ar', 'rtl')" class="btn btn-link">عربى</button>
+    | <button (click)="changeLang('hn')" class="btn btn-link">हिन्दी</button>
+</div>

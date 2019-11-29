@@ -11,7 +11,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(data: Array<any>, filterText: string, fields: any): any {
+  transform(data: Array<any>, filterText: string, fields?: any): any {
     if (!filterText) return data;
 
     let re = new RegExp(filterText, 'i');

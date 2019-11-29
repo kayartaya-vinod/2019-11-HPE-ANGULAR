@@ -9,10 +9,12 @@ import { ContactService } from 'src/app/services/contact.service';
 export class AppHeaderComponent {
 
   count: number = 0;
+  dir: string = 'ltr';
 
   constructor(service: ContactService) {
     service.on('contactsloaded', count => this.count = count);
     service.on('contactdeleted', () => this.count--);
+    service.on('dirchanged', dir => this.dir = dir);
   }
 
 }
