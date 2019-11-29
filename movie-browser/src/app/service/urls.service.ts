@@ -9,7 +9,7 @@ export class UrlsService {
   public urls: any;
 
   constructor(http: HttpClient) {
-    http.get('/urls.json')
+    http.get('./urls.json')
       .subscribe(data => this.urls = data);
   }
 }

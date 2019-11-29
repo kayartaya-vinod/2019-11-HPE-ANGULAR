@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JokeService } from 'src/app/service/joke.service';
 
 @Component({
   selector: 'app-chuck-norris-joke',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChuckNorrisJokeComponent implements OnInit {
 
-  constructor() { }
+  joke: string;
+
+  constructor(private jokeService: JokeService) { }
 
   ngOnInit() {
+    setInterval(
+      () => this.jokeService.getJoke().subscribe(data => this.joke = data.value),
+      3000);
   }
 
 }

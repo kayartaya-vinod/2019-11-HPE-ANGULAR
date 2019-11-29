@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MovieService } from 'src/app/service/movie.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -10,9 +11,21 @@ export class MovieListComponent implements OnInit {
   @Input()
   movieList: any[];
 
-  constructor() { }
+  selectedMovie: any;
+  loading: boolean = true;
+
+  constructor(private mvService: MovieService) { }
 
   ngOnInit() {
+  }
+
+  getMovieDetails(imdbID: string) {
+    this.loading = true;
+    this.mvService.getMovieData(imdbID)
+      .subscribe(data => {
+        this.selectedMovie = data;
+        this.loading = false;
+      });
   }
 
 }

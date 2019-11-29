@@ -1,8 +1,11 @@
 <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-4" [ngStyle]="{maxHeight: '500px', overflow: 'auto'}">
         <!-- movie list here -->
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let m of movieList">
+            <li class="list-group-item" 
+                *ngFor="let m of movieList"
+                [ngStyle]="{cursor: 'pointer'}"
+                (click)="getMovieDetails(m.imdbID)">
                 <div class="row">
                     <div class="col-md-3">
                         <img class="img-thumbnail" [src]="m.Poster" [alt]="m.Title">
@@ -15,7 +18,8 @@
             </li>
         </ul>
     </div>
-    <div class="col-md-7">
-        <app-movie-details></app-movie-details>
+    <div class="col-md-8">
+        <app-movie-details [selectedMovie]="selectedMovie"
+            [loading]="loading"></app-movie-details>
     </div>
 </div>

@@ -12,6 +12,8 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
+        ],
+        "urls": [
         ]
       }
     }, {
@@ -23,6 +25,21 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "trusted-apis",
+      "urls": [
+        "http://www.omdbapi.com/?apikey=aa9e49f&s=spider",
+        "https://api.chucknorris.io/jokes/random"
+      ],
+      "cacheConfig": {
+        "maxAge": "1h",
+        "maxSize": 20,
+        "strategy": "freshness",
+        "timeout": "10s"
       }
     }
   ]

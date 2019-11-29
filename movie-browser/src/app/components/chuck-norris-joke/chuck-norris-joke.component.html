@@ -1,1 +1,3 @@
-<p>chuck-norris-joke works!</p>
+<p class="lead" [ngClass]="{shown: joke, hidden: !joke}"
+    [ngStyle]="{minHeight: '60px', padding: '5px'}">
+    Joke of the moment: {{ joke }}</p>

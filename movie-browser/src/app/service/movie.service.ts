@@ -8,10 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class MovieService {
 
-  constructor(private urlService: UrlsService, private http: HttpClient) { }
+
+  constructor(private urlService: UrlsService, private http: HttpClient) {
+  }
 
   searchMovies(searchTerm: string): Observable<any> {
-    const url = this.urlService.urls['movie'] + '&s=' + searchTerm;
-    return this.http.get(url);
+    return this.http.get(this.urlService.urls['movie'], { params: { s: searchTerm } });
+  }
+
+  getMovieData(imdbId: string): Observable<any> {
+    return this.http.get(this.urlService.urls['movie'], { params: { i: imdbId } });
   }
 }

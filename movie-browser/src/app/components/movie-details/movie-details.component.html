@@ -1,1 +1,51 @@
-<p>movie-details works!</p>
+<div class="text-center" *ngIf="selectedMovie && loading" [ngStyle]="{paddingTop: '70px'}">
+    <img src="/assets/loading-projector.gif" alt="loading...">
+</div>
+<div class="row" *ngIf="!loading">
+    <div class="col-md-5">
+        <img class="img-thumbnail" [src]="selectedMovie.Poster" [alt]="selectedMovie.Title">
+    </div>
+    <div class="col-md-7">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Title</td>
+                    <td>{{selectedMovie.Title}}</td>
+                </tr>
+                <tr>
+                    <td>Plot</td>
+                    <td>{{selectedMovie.Plot}}</td>
+                </tr>
+                <tr>
+                    <td>Cast</td>
+                    <td>{{selectedMovie.Actors}}</td>
+                </tr>
+                <tr>
+                    <td>Genre</td>
+                    <td>{{selectedMovie.Genre}}</td>
+                </tr>
+                <tr>
+                    <td>Director</td>
+                    <td>{{selectedMovie.Director}}</td>
+                </tr>
+                <tr>
+                    <td>Released</td>
+                    <td>{{selectedMovie.Released}}</td>
+                </tr>
+                <tr>
+                    <td>Duration</td>
+                    <td>{{selectedMovie.Runtime}}</td>
+                </tr>
+                <tr>
+                    <td>Language</td>
+                    <td>{{selectedMovie.Language}}</td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td>{{selectedMovie.imdbRating}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
